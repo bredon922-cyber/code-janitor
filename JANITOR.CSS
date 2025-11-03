@@ -269,3 +269,156 @@ img.css-19ihot3 {
   color: #342323;
 }
 </style>
+
+<!-- Boutons dépliables ajoutés sous "Modifier le profil" -->
+<div class="janitor-profile-collapsible" data-janitor-ui="profile-collapsible">
+  <details class="janitor-profile-collapsible__item">
+    <summary class="janitor-profile-collapsible__trigger">
+      <span>📌 Liens rapides</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 15.5a1 1 0 0 1-.7-.29l-5-5a1 1 0 0 1 1.41-1.41L12 13.09l4.29-4.29A1 1 0 0 1 17.7 10.2l-5 5a1 1 0 0 1-.7.3Z" />
+      </svg>
+    </summary>
+    <div class="janitor-profile-collapsible__panel">
+      <a class="janitor-profile-collapsible__link" href="/profile">Voir mon profil public</a>
+      <a class="janitor-profile-collapsible__link" href="/settings/profile">Paramètres du profil</a>
+      <a class="janitor-profile-collapsible__link" href="/dashboard">Tableau de bord</a>
+    </div>
+  </details>
+
+  <details class="janitor-profile-collapsible__item">
+    <summary class="janitor-profile-collapsible__trigger">
+      <span>✨ Ressources créateur</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 15.5a1 1 0 0 1-.7-.29l-5-5a1 1 0 0 1 1.41-1.41L12 13.09l4.29-4.29A1 1 0 0 1 17.7 10.2l-5 5a1 1 0 0 1-.7.3Z" />
+      </svg>
+    </summary>
+    <div class="janitor-profile-collapsible__panel">
+      <a class="janitor-profile-collapsible__link" href="https://discord.gg/janitorai" target="_blank" rel="noreferrer">Communauté Janitor AI</a>
+      <a class="janitor-profile-collapsible__link" href="https://docs.janitorai.com" target="_blank" rel="noreferrer">Documentation officielle</a>
+      <span class="janitor-profile-collapsible__note">Ajoute ici tes propres liens (drive, tutoriels, etc.).</span>
+    </div>
+  </details>
+</div>
+
+<style>
+.css-1uodvt1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.css-1uodvt1 > .janitor-profile-collapsible {
+  order: 5;
+}
+
+.css-y9k5u7 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.janitor-profile-collapsible {
+  width: min(360px, 92vw);
+  margin-top: -0.25rem;
+  display: grid;
+  gap: 0.75rem;
+  align-self: stretch;
+  font-family: FONT;
+  color: #F2F1DF;
+}
+
+.janitor-profile-collapsible__item {
+  border-radius: 12px;
+  border: 1px solid rgba(242, 241, 223, 0.22);
+  background: linear-gradient(135deg, rgba(64, 0, 10, 0.85), rgba(153, 10, 22, 0.55));
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.janitor-profile-collapsible__item[open] {
+  border-color: #89A65D;
+  box-shadow: 0 0 0 2px rgba(137, 166, 93, 0.25);
+}
+
+.janitor-profile-collapsible__trigger {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: inherit;
+}
+
+.janitor-profile-collapsible__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.janitor-profile-collapsible__trigger svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+  transition: transform 200ms ease;
+}
+
+.janitor-profile-collapsible__item[open] .janitor-profile-collapsible__trigger svg {
+  transform: rotate(180deg);
+}
+
+.janitor-profile-collapsible__panel {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0 1.1rem 1.1rem;
+  font-size: 0.95rem;
+  color: #F2F1DF;
+}
+
+.janitor-profile-collapsible__link {
+  color: #F2F1DF;
+  text-decoration: none;
+  background: rgba(64, 0, 10, 0.55);
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(242, 241, 223, 0.18);
+  transition: background 150ms ease, transform 150ms ease, border-color 150ms ease;
+}
+
+.janitor-profile-collapsible__link:hover {
+  background: rgba(137, 166, 93, 0.18);
+  border-color: rgba(137, 166, 93, 0.65);
+  transform: translateY(-2px);
+}
+
+.janitor-profile-collapsible__link:active {
+  transform: translateY(0);
+}
+
+.janitor-profile-collapsible__note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(242, 241, 223, 0.75);
+}
+
+@media (max-width: 640px) {
+  .janitor-profile-collapsible {
+    width: 100%;
+  }
+
+  .janitor-profile-collapsible__trigger {
+    font-size: 0.95rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .janitor-profile-collapsible__panel {
+    padding: 0 0.9rem 0.9rem;
+  }
+}
+</style>
