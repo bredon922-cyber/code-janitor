@@ -1,271 +1,474 @@
 <style>
-/* page elements */
+:root {
+  --ink-light:#F2F1DF;
+  --ink-dark:#484742;
+  --bg-deep:#342323;
+  --bg-mid:#990a16;
+  --acc-1:#c8bcbf;
+  --acc-2:#397330;
+  --acc-3:#89A65D;
+  --acc-4:#40000a;
+  --bg-base:#390e14;
+  --blur-glow:0 0 24px rgba(200,188,191,.18);
+  --border-soft:1px solid rgba(72,71,66,.45);
+  --font-head:"Bebas Neue", "Oswald", sans-serif;
+  --font-body:"Montserrat", "Inter", sans-serif;
+}
+
+/* ===== Base ===== */
 * {
-    font-family: FONT;
-    color:#F2F1DF; /* light ink for text */
+  font-family: var(--font-body);
+  color: var(--ink-light);
+  letter-spacing:.02em;
 }
-a:link, a:visited {
-    color:#89A65D; /* link */
+
+a:link,
+a:visited {
+  color: var(--acc-3);
 }
-a:hover, a:active {
-    color:#397330; /* hover link */
+
+a:hover,
+a:active {
+  color: var(--acc-2);
 }
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(153,10,22,.35) 0%, rgba(57,14,20,1) 55%),
+              radial-gradient(circle at 80% 10%, rgba(64,0,10,.4) 0%, rgba(57,14,20,0) 45%),
+              #390e14;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 .css-0 {
-    background: none !important;
+  background: none !important;
 }
+
+/* ===== Typographie héro ===== */
 .css-UNIQUEID {
-    font-family: FONT;
-    color:#F2F1DF;
-    font-size: VALUEpx;
-    text-shadow: VALUEpx VALUEpx #40000a;
-    -webkit-text-stroke: VALUEpx #484742;
+  font-family: var(--font-head);
+  color: var(--ink-light);
+  font-size: clamp(36px, 5vw, 64px);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-shadow: -4px 4px var(--acc-4), var(--blur-glow);
+  -webkit-text-stroke: 1px rgba(0,0,0,.35);
 }
-.Btn2-purple:before {
-    transition: none;
-    background:#990a16; 
-}
-.Btn2-purple {
-    background:#40000a;
-}
-.css-9lg76n {
-    font-family: FONT;
-    color:#F2F1DF;
-}
-</style>
 
-
-
-
-<style>
-.css-1w58nos {
-    box-shadow: none !important;
-    border: VALUEpx STYLE #990a16 !important;
-    border-radius: VALUEpx;
-    background-color:#c8bcbf;
-    font-family: FONT; 
-    font-size: VALUEpx;
-    color:#342323;
+/* ===== Barre supérieure ===== */
+.pp-top-bar {
+  background: linear-gradient(90deg, rgba(64,0,10,.92), rgba(52,35,35,.85)) !important;
+  color: var(--ink-light) !important;
+  border-bottom: 2px solid rgba(200,188,191,.25) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,.45);
 }
-.css-oqdsp6 {
-    box-shadow: none !important;
-    border: VALUEpx STYLE #40000a !important;
-    border-radius: VALUEpx;
-    background-color:#40000a;
-    font-family: FONT; 
-    font-size: VALUEpx;
-    color:#F2F1DF;
-}
-.css-1n2in4t, .css-8l42c1 {
-    background:#990a16;
-    border: VALUEpx STYLE #40000a;
-    border-radius: VALUEpx;
-    svg {
-        fill:#F2F1DF;
-    }
-}
-</style>
 
-
-<style>
-/* ===== Barre d’en-tête ===== */
-.pp-top-bar{
-  background:#40000a !important;
-  color:#F2F1DF !important;
-  border-bottom:1px solid rgba(255,255,255,.12) !important;
-  backdrop-filter:blur(12px) !important;
-}
 .pp-top-bar a,
-.pp-top-bar button{
-  color:#F2F1DF !important;
+.pp-top-bar button {
+  color: var(--ink-light) !important;
+  font-family: var(--font-body) !important;
 }
 
-/* ===== Recherche ===== */
-.profile-top-bar-search-box{ max-width:640px !important; }
-.profile-top-bar-search-box input{
+.profile-top-bar-search-box { max-width: 640px !important; }
+.profile-top-bar-search-box input {
+  background: rgba(0,0,0,.25) !important;
+  border: 1px solid rgba(200,188,191,.25) !important;
+  border-radius: 12px !important;
+  color: var(--ink-light) !important;
+  padding:.55rem 1rem !important;
 }
-.profile-top-bar-search-box input::placeholder{
-  color:#F2F1DF !important;
-  opacity:.85 !important;
+.profile-top-bar-search-box input::placeholder {
+  color: rgba(242,241,223,.78) !important;
+  text-transform: uppercase;
+  letter-spacing:.12em;
 }
 
-/* ===== Boutons Auth ===== */
 .pp-top-bar-auth-buttons,
-.profile-top-bar-auth-buttons{ display:flex; gap:.5rem; }
+.profile-top-bar-auth-buttons {
+  display: flex;
+  gap: .75rem;
+}
 
-/* Connexion */
 .pp-top-bar-auth-buttons-login,
-.profile-top-bar-auth-buttons-login{
-  background:#397330 !important;
-  color:#0D0000 !important;
-  border:1px solid #2f5e28 !important; /* fallback au color-mix */
-  border-radius:10px !important;
-  font-weight:700 !important;
+.profile-top-bar-auth-buttons-login {
+  background: linear-gradient(120deg, var(--acc-2), #4d8c44) !important;
+  color: #0d0000 !important;
+  border: 2px solid #2f5e28 !important;
+  border-radius: 14px !important;
+  padding: .6rem 1.4rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing:.1em;
+  box-shadow: inset 0 0 0 1px rgba(242,241,223,.2);
 }
-.pp-top-bar-auth-buttons-login:hover{ filter:saturate(1.1) brightness(1.05); }
 
-/* Inscription */
+.pp-top-bar-auth-buttons-login:hover {
+  filter: saturate(1.1) brightness(1.05);
+  transform: translateY(-1px);
+}
+
 .pp-top-bar-auth-buttons-register,
-.profile-top-bar-auth-buttons-register{
-  background:#8f0a17 !important; /* mix de --bg-mid et --acc-4 */
-  color:#F2F1DF !important;
-  border:1px solid #6f0812 !important; /* fallback au color-mix */
-  border-radius:10px !important;
-  font-weight:700 !important;
-}
-.pp-top-bar-auth-buttons-register:hover{ filter:saturate(1.08) brightness(1.04); }
-
-/* ===== Mobile ===== */
-.pp-top-bar-title, .profile-top-bar-title{
-  color:#F2F1DF !important;
-  font-weight:800 !important;
-  text-shadow:0 0 10px rgba(242,241,223,.16);
-}
-.pp-top-bar-back-button, .profile-top-bar-back-button{
-  background:#F2F1DF !important;
-  color:#40000a !important;
-  border:1px solid rgba(255,255,255,.14) !important;
-  border-radius:10px !important;
+.profile-top-bar-auth-buttons-register {
+  background: linear-gradient(120deg, #8f0a17, var(--acc-4)) !important;
+  color: var(--ink-light) !important;
+  border: 2px solid #6f0812 !important;
+  border-radius: 14px !important;
+  padding: .6rem 1.4rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing:.1em;
+  box-shadow: inset 0 0 0 1px rgba(242,241,223,.14);
 }
 
-/* ===== CTA “Créer un personnage” ===== */
-.pp-top-bar-right a[href*="create"]{
-  background:#40000a !important;
-  color:#89A65D !important;
-  opacity:.92 !important;
+.pp-top-bar-auth-buttons-register:hover {
+  filter: saturate(1.08) brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.pp-top-bar-title,
+.profile-top-bar-title {
+  color: var(--ink-light) !important;
+  font-weight: 800 !important;
+  font-family: var(--font-head) !important;
+  text-shadow: 0 0 12px rgba(242,241,223,.25);
+  letter-spacing:.24em;
+}
+
+.pp-top-bar-back-button,
+.profile-top-bar-back-button {
+  background: var(--ink-light) !important;
+  color: var(--acc-4) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 14px !important;
   padding:.45rem .95rem !important;
-  border-radius:10px !important;
-  font-weight:1000 !important;
-  text-decoration:none !important;
-  border:2px solid #c8bcbf !important;
-}
-.pp-top-bar-right a[href*="create"]:hover{
-  opacity:1 !important;
-  box-shadow:0 0 0 2px rgba(137,166,93,.25);
+  font-weight: 700 !important;
 }
 
-/* ===== Fond global (si nécessaire) ===== */
-body{ background:#0D0000; }
-</style>
+.pp-top-bar-right a[href*="create"] {
+  background: var(--acc-4) !important;
+  color: var(--acc-3) !important;
+  opacity: .92 !important;
+  padding: .6rem 1.65rem !important;
+  border-radius: 14px !important;
+  border: 2px solid var(--acc-1) !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing:.16em;
+}
 
+.pp-top-bar-right a[href*="create"]:hover {
+  opacity: 1 !important;
+  box-shadow: 0 0 0 3px rgba(137,166,93,.18);
+}
 
-<style>
-/* profile card */
-.css-1uodvt1 { /* center your pfp, username, and follower count */
-    padding-top: 0px;
-    flex-direction: column;
-    justify-items: center;
-    text-align: center;
+/* ===== Cartes de sections ===== */
+.css-1s5evre,
+.css-13b3nfg,
+.css-18qt3h2,
+.css-1w58nos-container {
+  border: 2px solid rgba(153,10,22,.55) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(180deg, rgba(64,0,10,.75), rgba(52,35,35,.55));
+  box-shadow: var(--blur-glow);
+  overflow: hidden;
 }
-  .css-hsi2ui { /* profile photo */
-    height: 250px;
-    width: 250px; /* you can change the size and shape of your pfp by adjusting this and the height value */
-    border-radius: 10pc; /* makes it a circle. you can play around with other values, use a mask, etc. */
-    border: VALUEpx STYLE COLOR;
-    box-shadow: none !important; 
-}
- .css-UNIQUEID  { /* username. use inspect element to find your class id. */
-    font-family: FONT;
-    font-size: VALUEpx;
-    color: COLOR;
-    text-shadow: VALUEpx VALUEpx COLOR; /* adds a drop shadow to the text. feel free to remove. the VALUEs change the angle and distance. */
-    -webkit-text-stroke: VALUEpx COLOR; /* adds an outline around the text. again, feel free to remove. VALUE changes the thickness. */
-}
-.css-UNIQUEID { /* follower count. again, find your unique class id via inspect element */
-    font-family: FONT;
-    font-size: VALUEpx;
-    color: COLOR;
-    background: COLOR;
-    border: VALUEpx STYLE COLOR;
-}
-.css-hjkukh { /* event badges. you can take this out if you don't have them! */
-    position: relative;
-    justify-content: center; /* centers them */
-    filter: FILTER; /* look up css filters and you can apply one to them here, to make them match your aesthetic. hue rotate, saturation, etc. */
-}
-.Btn:before { /* follow button appearance */
-    color: COLOR; /* text color */
-    background-color: COLOR; /* background color */
-    font-family: FONT;
-}
-.Btn { /* border around the follow button */
-    background: COLOR;
-} 
-.css-y9k5u7 { /* center the follow button */
-    justify-content: center; 
-}
-.css-UNIQUEID { /* the border for your profile card AND public characters, if you've hidden css-0. USE INSPECT ELEMENT! */
-    border: VALUEpx STYLE COLOR; /* style the border */
-    border-radius: VALUEpx; /* corner rounding */
-}
-.css-UNIQUEID { /* removing the default gradient on the profile card is also a unique id, afaik. again, inspect element is your friend. */
-  background: none;
-}
-</style>
 
+.css-19r5em7,
+.css-1p2g9p7 {
+  background: rgba(57,14,20,.65) !important;
+}
 
+/* ===== Boutons principaux ===== */
+.Btn2-purple:before {
+  transition: none;
+  background: var(--bg-mid);
+}
 
-<style>
-/* bot card */
+.Btn2-purple {
+  background: var(--acc-4);
+  border-radius: 16px;
+  border: 2px solid rgba(64,0,10,.6);
+  padding: .75rem 2.2rem !important;
+  font-size: 1rem !important;
+  letter-spacing:.18em;
+}
+
+.Btn2-purple:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
+.Btn:before {
+  color: var(--ink-light);
+  background-color: var(--acc-4);
+  font-family: var(--font-body);
+  letter-spacing:.16em;
+}
+
+.Btn {
+  background: linear-gradient(135deg, rgba(64,0,10,.92), rgba(153,10,22,.7));
+  padding: .75rem 2rem !important;
+  border-radius: 16px !important;
+  border: 2px solid rgba(153,10,22,.65) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing:.18em;
+}
+
+.css-y9k5u7 {
+  justify-content: center;
+}
+
+/* ===== Boutons Chakra génériques ===== */
+.chakra-button,
+button[class*="chakra-button"],
+.css-1n2in4t,
+.css-8l42c1 {
+  background: linear-gradient(135deg, rgba(153,10,22,.95), rgba(64,0,10,.85));
+  border: 2px solid rgba(200,188,191,.35);
+  border-radius: 16px;
+  padding: .7rem 1.8rem;
+  font-weight: 700;
+  letter-spacing:.12em;
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+}
+
+.css-1n2in4t svg,
+.css-8l42c1 svg {
+  fill: var(--ink-light);
+}
+
+/* ===== Menu des tags ===== */
+.css-1w58nos {
+  box-shadow: none !important;
+  border: 2px solid var(--bg-mid) !important;
+  border-radius: 14px;
+  background-color: rgba(200,188,191,.12);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing:.08em;
+  color: var(--ink-light);
+}
+
+.css-oqdsp6 {
+  box-shadow: none !important;
+  border: 2px solid var(--acc-4) !important;
+  border-radius: 14px;
+  background-color: var(--acc-4);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-light);
+}
+
+/* ===== Carte profil ===== */
+.css-1uodvt1 {
+  padding-top: 0;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.css-hsi2ui {
+  height: 260px;
+  width: 260px;
+  border-radius: 22px;
+  border: 6px double var(--acc-4);
+  box-shadow: 0 15px 28px rgba(0,0,0,.45);
+  filter: saturate(.92);
+}
+
+.css-hjkukh {
+  position: relative;
+  justify-content: center;
+  filter: saturate(.85) contrast(1.05);
+}
+
+.css-19lg76n,
+.css-9lg76n {
+  font-family: var(--font-body);
+  color: var(--ink-light);
+  letter-spacing:.1em;
+}
+
+/* ===== Cartes bots ===== */
 .css-1s5evre {
-  border: 2px solid #990a16;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(64,0,10,.55), rgba(153,10,22,.25));
+  border: 2px solid var(--bg-mid);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(64,0,10,.62), rgba(153,10,22,.35));
 }
 
-/* bot names */
 .css-1ifv49 {
   justify-content: center;
-  font-family: FONT;
-  font-size: 18px;
-  color: #F2F1DF;
-  text-shadow: 1px 1px #40000a;
+  font-family: var(--font-head);
+  font-size: 20px;
+  color: var(--ink-light);
+  text-shadow: 2px 2px var(--acc-4);
+  letter-spacing:.12em;
 }
 
-/* ribbon chat count */
 .css-wexxj8 {
-  background: #89A65D !important;
+  background: var(--acc-3) !important;
+  color: var(--bg-deep) !important;
 }
 
-/* divider line */
 .css-1lgnt2x {
-  border-top: 2px solid #40000a;
+  border-top: 2px solid var(--acc-4);
   width: 80%;
+  margin: 1.2rem auto;
 }
 
-/* replace star image */
 img.css-19ihot3 {
   position: absolute;
   right: -8px;
   top: -8px;
-  content: url("https://cdn.discordapp.com/attachments/1099030085882880111/1434704219205533757/LOULOUci.png);
-  width: 24px;
-  height: 24px;
+  content: url("https://cdn.discordapp.com/attachments/1099030085882880111/1434704219205533757/LOULOUci.png");
+  width: 28px;
+  height: 28px;
 }
 
-/* bot tags */
 .css-x2gqu0 {
-  border: 1px solid #990a16;
-  border-radius: 6px;
-  background: #40000a;
-  font-family: FONT;
-  color: #F2F1DF;
+  border: 2px solid var(--bg-mid);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(64,0,10,.9), rgba(153,10,22,.65));
+  font-family: var(--font-body);
+  color: var(--ink-light);
   box-shadow: none !important;
-  transition: transform .15s ease-in-out;
+  transition: transform .18s ease-in-out, border-color .18s;
+  padding: .45rem .85rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing:.12em;
 }
 
 .css-x2gqu0:hover,
 .css-x2gqu0[data-hover] {
-  border: 1px solid #397330;
-  background: #990a16;
-  transform: scale(1.1);
+  border: 2px solid var(--acc-2);
+  background: rgba(153,10,22,.85);
+  transform: translateY(-2px) scale(1.05);
 }
 
-/* limitless tag */
 .css-1ylu7un {
-  border: 1px solid #89A65D;
-  border-radius: 6px;
-  background: #89A65D;
-  font-family: FONT;
-  color: #342323;
+  border: 2px solid var(--acc-3);
+  border-radius: 10px;
+  background: var(--acc-3);
+  font-family: var(--font-body);
+  color: var(--bg-deep);
+  font-weight: 700;
+}
+
+/* ===== Accordeons / boîtes ===== */
+.css-1e6z9dn,
+.css-1qt8g83 {
+  background: rgba(64,0,10,.65) !important;
+  border: 2px solid rgba(200,188,191,.18) !important;
+  border-radius: 18px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+
+.css-14gy7wr,
+.css-17fz0zh {
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing:.24em;
+  color: var(--acc-1);
+}
+
+.css-1cm7fqd button {
+  padding: .75rem 1.6rem !important;
+  border-radius: 16px !important;
+}
+
+/* ===== Liens rapides & ressources ===== */
+.css-13b3nfg .chakra-link,
+.css-18qt3h2 .chakra-link {
+  display: block;
+  background: rgba(57,14,20,.85);
+  border: 2px solid rgba(200,188,191,.16);
+  border-radius: 14px;
+  padding: .8rem 1.1rem;
+  margin-bottom: .65rem;
+  font-weight: 600;
+  letter-spacing:.06em;
+  transition: transform .15s ease, border-color .15s ease;
+}
+
+.css-13b3nfg .chakra-link:hover,
+.css-18qt3h2 .chakra-link:hover {
+  border-color: var(--acc-2);
+  transform: translateX(4px);
+}
+
+.css-13b3nfg .chakra-heading,
+.css-18qt3h2 .chakra-heading {
+  font-family: var(--font-head);
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  color: var(--acc-1);
+  margin-bottom: 1rem;
+}
+
+/* ===== Icônes flottantes ===== */
+</style>
+
+<div class="page-doll noir-card">
+  <img src="https://cdn.discordapp.com/attachments/1099030085882880111/1434701738429911160/25_09_08__BUBBLE__NAOMY__NOFOND.png" alt="Card dossier">
+</div>
+<div class="page-doll-2 noir-card">
+  <img src="https://cdn.discordapp.com/attachments/1099030085882880111/1434704219205533757/LOULOUci.png" alt="Flip phone">
+</div>
+
+<style>
+.page-doll,
+.page-doll-2 {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: auto;
+  transition: transform .25s ease;
+}
+
+.page-doll {
+  bottom: 18px;
+  right: 26px;
+}
+
+.page-doll-2 {
+  top: 120px;
+  left: 24px;
+}
+
+.page-doll img,
+.page-doll-2 img {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,.45));
+}
+
+.page-doll:hover,
+.page-doll-2:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .page-doll,
+  .page-doll-2 { display: none; }
+}
+
+/* ===== Overlay en option ===== */
+.overlay-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 2;
+  pointer-events: none;
+  opacity: .35;
 }
 </style>
