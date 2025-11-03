@@ -44,18 +44,28 @@
 
 <style>
 /* page elements */
+:root {
+    --font-display: "Grand Caslon", "Times New Roman", serif;
+    --font-body: "Candara", "Segoe UI", sans-serif;
+}
 html, body {
     background-color: #331419;
 }
 * {
     color: #F2F1DF;
+    font-family: var(--font-body);
 }
 body, button, input, select, textarea {
-    font-family: "Candara", "Segoe UI", sans-serif;
+    font-family: var(--font-body);
 }
 h1, h2, h3, h4, h5, h6,
-.css-9lg76n {
-    font-family: "Grand Caslon", "Times New Roman", serif;
+.css-9lg76n,
+.css-character-name,
+.css-username,
+.css-USERNAME-ID,
+.css-CHARACTER-NAME-ID,
+.display-font {
+    font-family: var(--font-display);
 }
 a:link, a:visited {
     color: #89A65D;
@@ -100,7 +110,7 @@ a:hover, a:active {
     border: VALUEpx STYLE #990a16 !important;
     border-radius: VALUEpx;
     background-color: #c8bcbf;
-    font-family: "Candara", "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     font-size: VALUEpx;
     color: #342323;
 }
@@ -109,7 +119,7 @@ a:hover, a:active {
     border: VALUEpx STYLE #40000a !important;
     border-radius: VALUEpx;
     background-color: #40000a;
-    font-family: "Candara", "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     font-size: VALUEpx;
     color: #F2F1DF;
 }
@@ -122,9 +132,9 @@ a:hover, a:active {
     fill: #F2F1DF;
 }
 
-/* username */
-.css-UNIQUEID {
-    font-family: "Grand Caslon", "Times New Roman", serif;
+/* username (replace .css-USERNAME-ID with the inspected class) */
+.css-USERNAME-ID {
+    font-family: var(--font-display);
     font-size: VALUEpx;
     color: #F2F1DF;
     text-shadow: VALUEpx VALUEpx #40000a;
@@ -132,7 +142,8 @@ a:hover, a:active {
 }
 
 /* follower count tag */
-.css-UNIQUEID {
+.css-FOLLOWER-TAG-ID {
+    font-family: var(--font-body);
     font-size: VALUEpx;
     color: #342323;
     background: #c8bcbf;
@@ -150,7 +161,7 @@ a:hover, a:active {
 .Btn:before {
     color: #F2F1DF;
     background-color: #990a16;
-    font-family: "Candara", "Segoe UI", sans-serif;
+    font-family: var(--font-body);
 }
 .Btn {
     background: #40000a;
@@ -162,13 +173,13 @@ a:hover, a:active {
 }
 
 /* card border & public characters */
-.css-UNIQUEID {
+.css-PUBLIC-CHAR-ID {
     border: VALUEpx solid #990a16;
     border-radius: VALUEpx;
 }
 
 /* remove default gradient */
-.css-UNIQUEID {
+.css-REMOVE-GRADIENT-ID {
   background: none;
 }
 </style>
