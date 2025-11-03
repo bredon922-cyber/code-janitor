@@ -1,5 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kir Legrand · Portfolio</title>
+  <style>
+    :root {
+      --ink-light: #F2F1DF;
+      --ink-dark: #484742;
+      --bg-mid: #990a16;
+      --acc-1: #c8bcbf;
+      --acc-2: #397330;
+      --acc-3: #89A65D;
+      --acc-4: #40000a;
+      --bg-deep: #342323;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg-deep);
+      color: var(--ink-light);
+      font-family: "Candara", "Calibri", "Segoe UI", sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Grand Caslon", "Times New Roman", Times, serif;
+      color: var(--ink-light);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--acc-3);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--acc-2);
+      text-decoration: underline;
+    }
+
+    .profile-page-background {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px 16px 96px;
+      background: linear-gradient(145deg, rgba(52, 35, 35, 0.92), rgba(64, 0, 10, 0.92));
+    }
+
+    .profile-card {
+      width: min(960px, 100%);
+      background: rgba(64, 0, 10, 0.92);
+      border: 3px solid var(--bg-mid);
+      border-radius: 28px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+    }
+
+    .profile-header {
+      padding: 40px 48px 32px;
+      border-bottom: 1px solid rgba(200, 188, 191, 0.35);
+    }
+
+    .profile-header p {
+      font-size: 1.1rem;
+      margin: 12px 0 0;
+      color: var(--acc-1);
+      max-width: 620px;
+    }
+
+    .profile-content {
+      padding: 32px 48px 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      background: linear-gradient(160deg, rgba(200, 188, 191, 0.06), rgba(72, 71, 66, 0.18));
+    }
+
+    .profile-section {
+      background: rgba(72, 71, 66, 0.5);
+      border: 1px solid rgba(200, 188, 191, 0.28);
+      border-radius: 20px;
+      padding: 24px;
+      color: var(--ink-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(153, 10, 22, 0.18), rgba(64, 0, 10, 0.28));
+      opacity: 0.9;
+      z-index: 0;
+    }
+
+    .profile-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .profile-section p {
+      margin: 0 0 16px;
+      font-size: 1rem;
+    }
+
+    .accent-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--acc-1);
+      color: var(--bg-deep);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .primary-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 2px solid var(--bg-mid);
+      background: rgba(200, 188, 191, 0.14);
+      color: var(--ink-light);
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .primary-link::after {
+      content: "↗";
+      font-size: 0.9em;
+    }
+
+    .primary-link:hover,
+    .primary-link:focus {
+      background: rgba(57, 115, 48, 0.4);
+      color: var(--ink-light);
+      transform: translateY(-2px);
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .info-list li {
+      background: rgba(242, 241, 223, 0.08);
+      border-left: 3px solid var(--bg-mid);
+      padding: 12px 16px;
+      border-radius: 14px;
+      color: var(--ink-light);
+    }
+
+    .info-list strong {
+      display: block;
+      font-family: "Grand Caslon", "Times New Roman", Times, serif;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .Btn2-purple {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 2px solid var(--bg-mid);
+      background: rgba(200, 188, 191, 0.1);
+      color: var(--ink-light);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+
+    .Btn2-purple::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--acc-1);
+      opacity: 0.0;
+      transition: none;
+      z-index: 0;
+    }
+
+    .Btn2-purple:hover::before {
+      opacity: 0.22;
+    }
+
+    .Btn2-purple:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .Btn2-purple span,
+    .css-9lg76n {
+      position: relative;
+      z-index: 1;
+      font-family: "Grand Caslon", "Times New Roman", Times, serif;
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      letter-spacing: 0.06em;
+    }
+
+    .css-9lg76n {
+      font-family: "Candara", "Calibri", "Segoe UI", sans-serif;
+      color: var(--ink-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 16px 48px;
+      color: rgba(242, 241, 223, 0.6);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-page-background {
+        padding: 32px 12px 72px;
+      }
+
+      .profile-header,
+      .profile-content {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .profile-header {
+        padding-top: 32px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .profile-content {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        border-width: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-page-background">
+    <article class="profile-card">
+      <header class="profile-header">
+        <h1>Kir Legrand</h1>
+        <p>Créatrice pluridisciplinaire mêlant illustration, narration et identité visuelle. Ici, retrouvez les points d'accès essentiels vers mon univers.</p>
+      </header>
+
+      <div class="profile-content">
+        <section class="profile-section">
+          <span class="accent-tag">Dernières nouvelles</span>
+          <h2>Projets en cours</h2>
+          <p>Exploration de palettes profondes, création de personnages et scénarisation immersive autour d'univers fantaisistes et mélancoliques.</p>
+          <ul class="info-list">
+            <li>
+              <strong>Palette &amp; Texture</strong>
+              Expérimentations sur des ambiances aux contrastes châtoyants et des textures enveloppantes.
+            </li>
+            <li>
+              <strong>Personnages</strong>
+              Développement de silhouettes expressives pour de nouvelles séries illustrées.
+            </li>
+          </ul>
+        </section>
+
+        <section class="profile-section">
+          <span class="accent-tag">Ressource</span>
+          <h2>Carte de visite</h2>
+          <p>Pour une vue d'ensemble de mes projets graphiques et de mes collaborations, consultez ma carte de présentation en ligne.</p>
+          <a class="primary-link" href="https://kirlegrand.carrd.co/" target="_blank" rel="noopener">Visiter la carte</a>
+        </section>
+
+        <section class="profile-section">
+          <span class="accent-tag">Outil</span>
+          <h2>Nombre total de caractères</h2>
+          <p>Accédez rapidement au module de suivi du volume de texte pour calibrer vos publications et documents.</p>
+          <button class="Btn2-purple" type="button">
+            <span class="css-9lg76n">Ouvrir le compteur</span>
+          </button>
+        </section>
+      </div>
+    </article>
+  </div>
+
 <style>
-.profile-page-background {
-  
+.page-doll-area {
+  position: fixed;
+  bottom: 60px;
+  left: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.page-doll {
+  display: inline-block;
+}
+
+.page-doll img {
+  width: 70px;
+  height: auto;
+  cursor: pointer;
+}
+
+.page-doll.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .page-doll.mobile-only {
+    display: inline-block;
+  }
+
+  .page-doll.desktop-only {
+    display: none;
+  }
 }
 </style>
+
+<div class="page-doll-area">
+  <div class="page-doll">
+    <img src="https://cdn.discordapp.com/attachments/1099030085882880111/1434701738429911160/25_09_08__BUBBLE__NAOMY__NOFOND.png?ex=6909f25d&amp;is=6908a0dd&amp;hm=72a2835b2f737911ac72af8b0f5da230b5090208464a52be0f707766eec1703c&amp;" alt="Page Doll Loulou">
+  </div>
+</div>
+
+</body>
+</html>
