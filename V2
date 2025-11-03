@@ -1,5 +1,248 @@
-<style>
-.profile-page-background {
-  
-}
-</style>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kir Legrand · Portfolio</title>
+    <style>
+      :root {
+        --ink-light: #f2f1df;
+        --ink-dark: #484742;
+        --bg-mid: #990a16;
+        --accent-1: #c8bcbf;
+        --accent-2: #397330;
+        --accent-3: #89a65d;
+        --accent-4: #40000a;
+        --bg-deep: #342323;
+        --overlay-opacity: 0.5;
+        font-family: "FONT", "Segoe UI", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink-light);
+        background-color: var(--bg-deep);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      a {
+        color: var(--accent-3);
+        text-decoration: none;
+        transition: color 150ms ease-in-out;
+      }
+
+      a:hover,
+      a:focus {
+        color: var(--accent-2);
+      }
+
+      .profile-page-background {
+        width: 100%;
+        max-width: 960px;
+        padding: 48px 32px 96px;
+        box-sizing: border-box;
+      }
+
+      .content-overlay {
+        background: rgba(52, 35, 35, var(--overlay-opacity));
+        border: 2px solid var(--bg-mid);
+        border-radius: 16px;
+        padding: 32px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .content-overlay h1 {
+        margin: 0 0 16px;
+        font-size: 2.5rem;
+        color: var(--accent-1);
+        letter-spacing: 0.06em;
+      }
+
+      .content-overlay p {
+        line-height: 1.6;
+        margin: 0 0 24px;
+        color: var(--ink-light);
+      }
+
+      .cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 12px 18px;
+        border: 2px solid var(--bg-mid);
+        border-radius: 999px;
+        background: linear-gradient(135deg, rgba(153, 10, 22, 0.8), rgba(64, 0, 10, 0.9));
+        color: var(--ink-light);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .cta-link:hover,
+      .cta-link:focus {
+        background: linear-gradient(135deg, rgba(57, 115, 48, 0.85), rgba(137, 166, 93, 0.9));
+        border-color: var(--accent-2);
+        color: var(--ink-light);
+      }
+
+      .character-total {
+        margin-top: 48px;
+        padding-top: 32px;
+        border-top: 1px solid rgba(242, 241, 223, 0.2);
+      }
+
+      .character-total h2 {
+        margin: 0 0 8px;
+        font-size: 1.5rem;
+        color: var(--accent-1);
+      }
+
+      .character-total p {
+        margin: 0 0 16px;
+        color: var(--ink-light);
+        font-style: italic;
+      }
+
+      .button-pair {
+        display: inline-flex;
+        gap: 12px;
+      }
+
+      .Btn2-purple {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 120px;
+        padding: 12px 18px;
+        border-radius: 14px;
+        border: 2px solid var(--bg-mid);
+        background: var(--bg-mid);
+        color: var(--ink-light);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+      }
+
+      .Btn2-purple::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: var(--accent-4);
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        z-index: -1;
+      }
+
+      .Btn2-purple:hover::before,
+      .Btn2-purple:focus-visible::before {
+        opacity: 1;
+      }
+
+      .Btn2-purple:hover,
+      .Btn2-purple:focus-visible {
+        border-color: var(--accent-2);
+      }
+
+      .css-9lg76n {
+        font-family: "FONT", "Segoe UI", sans-serif;
+        color: var(--ink-light);
+      }
+
+      .page-doll-area {
+        position: fixed;
+        bottom: 60px;
+        left: 10px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .page-doll {
+        display: inline-block;
+      }
+
+      .page-doll img {
+        width: 70px;
+        height: auto;
+        cursor: pointer;
+        border-radius: 12px;
+        border: 2px solid var(--accent-1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      .page-doll.mobile-only {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .page-doll.mobile-only {
+          display: inline-block;
+        }
+
+        .page-doll.desktop-only {
+          display: none;
+        }
+
+        .content-overlay {
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page-doll {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-page-background">
+      <div class="content-overlay">
+        <h1 class="css-9lg76n">Kir Legrand</h1>
+        <p>
+          Bienvenue dans mon univers créatif. Découvrez mon travail, mes collaborations et
+          toute l'actualité artistique directement sur mon espace en ligne.
+        </p>
+        <a class="cta-link" href="https://kirlegrand.carrd.co/" target="_blank" rel="noopener">
+          Visiter mon portfolio
+        </a>
+
+        <section class="character-total">
+          <h2>Nombre total de caractères</h2>
+          <p>Écrit par Ursium. Deux boutons, un même esprit que le module « Suivre ».</p>
+          <div class="button-pair">
+            <button type="button" class="Btn2-purple">Compteur</button>
+            <button type="button" class="Btn2-purple">Détails</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="page-doll-area">
+      <a
+        class="page-doll desktop-only"
+        href="https://kirlegrand.carrd.co/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Accéder au site de Kir Legrand"
+      >
+        <img
+          src="https://cdn.discordapp.com/attachments/1099030085882880111/1434701738429911160/25_09_08__BUBBLE__NAOMY__NOFOND.png?ex=6909f25d&amp;is=6908a0dd&amp;hm=72a2835b2f737911ac72af8b0f5da230b5090208464a52be0f707766eec1703c&amp;"
+          alt="Illustration de Kir Legrand"
+          loading="lazy"
+        />
+      </a>
+    </div>
+  </body>
+</html>
