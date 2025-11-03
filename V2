@@ -54,7 +54,6 @@ body, button, input, select, textarea {
     font-family: "Candara", "Segoe UI", sans-serif;
 }
 h1, h2, h3, h4, h5, h6,
-.css-UNIQUEID,
 .css-9lg76n {
     font-family: "Grand Caslon", "Times New Roman", serif;
 }
@@ -66,13 +65,6 @@ a:hover, a:active {
 }
 .css-0 {
     background: none !important; 
-}
-.css-UNIQUEID {
-    font-family: "Grand Caslon", "Times New Roman", serif;
-    color: #F2F1DF;
-    font-size: VALUEpx;
-    text-shadow: VALUEpx VALUEpx #40000a;
-    -webkit-text-stroke: VALUEpx #484742;
 }
 .Btn2-purple:before {
     transition: none;
@@ -87,12 +79,20 @@ a:hover, a:active {
 </style>
 
 <style>
-.css-hsi2ui { /* photo de profil */
+/* profile card */
+.css-1uodvt1 {
+    padding-top: 0px;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+}
+
+.css-hsi2ui { /* profile photo */
     height: 250px;
     width: 250px;
     border-radius: 10pc;
-    border: VALUEpx STYLE COLOR;
-    box-shadow: 0 0 10px #331419 !important;
+    border: VALUEpx solid #990a16;
+    box-shadow: none !important;
 }
 
 .css-1w58nos {
@@ -120,5 +120,55 @@ a:hover, a:active {
 }
 .css-1n2in4t svg, .css-8l42c1 svg {
     fill: #F2F1DF;
+}
+
+/* username */
+.css-UNIQUEID {
+    font-family: "Grand Caslon", "Times New Roman", serif;
+    font-size: VALUEpx;
+    color: #F2F1DF;
+    text-shadow: VALUEpx VALUEpx #40000a;
+    -webkit-text-stroke: VALUEpx #484742;
+}
+
+/* follower count tag */
+.css-UNIQUEID {
+    font-size: VALUEpx;
+    color: #342323;
+    background: #c8bcbf;
+    border: VALUEpx solid #990a16;
+}
+
+/* event badges */
+.css-hjkukh {
+    position: relative;
+    justify-content: center;
+    filter: saturate(0.9) brightness(1.05);
+}
+
+/* follow button */
+.Btn:before {
+    color: #F2F1DF;
+    background-color: #990a16;
+    font-family: "Candara", "Segoe UI", sans-serif;
+}
+.Btn {
+    background: #40000a;
+}
+
+/* center follow button */
+.css-y9k5u7 {
+    justify-content: center;
+}
+
+/* card border & public characters */
+.css-UNIQUEID {
+    border: VALUEpx solid #990a16;
+    border-radius: VALUEpx;
+}
+
+/* remove default gradient */
+.css-UNIQUEID {
+  background: none;
 }
 </style>
