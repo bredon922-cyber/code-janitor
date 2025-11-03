@@ -48,8 +48,15 @@ html, body {
     background-color: #331419;
 }
 * {
-    font-family: FONT;
     color: #F2F1DF;
+}
+body, button, input, select, textarea {
+    font-family: "Candara", "Segoe UI", sans-serif;
+}
+h1, h2, h3, h4, h5, h6,
+.css-UNIQUEID,
+.css-9lg76n {
+    font-family: "Grand Caslon", "Times New Roman", serif;
 }
 a:link, a:visited {
     color: #89A65D;
@@ -61,7 +68,7 @@ a:hover, a:active {
     background: none !important; 
 }
 .css-UNIQUEID {
-    font-family: FONT;
+    font-family: "Grand Caslon", "Times New Roman", serif;
     color: #F2F1DF;
     font-size: VALUEpx;
     text-shadow: VALUEpx VALUEpx #40000a;
@@ -75,18 +82,25 @@ a:hover, a:active {
     background: #40000a;
 }
 .css-9lg76n {
-    font-family: FONT;
     color: #F2F1DF;
 }
 </style>
 
 <style>
+.css-hsi2ui { /* photo de profil */
+    height: 250px;
+    width: 250px;
+    border-radius: 10pc;
+    border: VALUEpx STYLE COLOR;
+    box-shadow: 0 0 10px #331419 !important;
+}
+
 .css-1w58nos {
     box-shadow: none !important;
     border: VALUEpx STYLE #990a16 !important;
     border-radius: VALUEpx;
     background-color: #c8bcbf;
-    font-family: FONT; 
+    font-family: "Candara", "Segoe UI", sans-serif;
     font-size: VALUEpx;
     color: #342323;
 }
@@ -95,7 +109,7 @@ a:hover, a:active {
     border: VALUEpx STYLE #40000a !important;
     border-radius: VALUEpx;
     background-color: #40000a;
-    font-family: FONT; 
+    font-family: "Candara", "Segoe UI", sans-serif;
     font-size: VALUEpx;
     color: #F2F1DF;
 }
