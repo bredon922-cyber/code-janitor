@@ -1,5 +1,139 @@
 <style>
+/* General layout for the profile page background */
 .profile-page-background {
-  
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #001234 0%, #003b88 100%);
+  color: #f8f9ff;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* Page doll wrapper */
+.page-doll {
+  --page-doll-size: 140px;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+/* Allow multiple dolls aligned horizontally when needed */
+.page-doll.page-doll--horizontal {
+  flex-direction: row;
+}
+
+.page-doll__item {
+  display: block;
+  width: var(--page-doll-size);
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+  transition: transform 0.25s ease, filter 0.25s ease;
+  pointer-events: auto;
+}
+
+.page-doll__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.page-doll__item:hover {
+  transform: translateY(-6px) scale(1.03);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+}
+
+/* Optional modifiers for responsive-only dolls */
+@media (max-width: 767px) {
+  .page-doll--desktop-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-doll--mobile-only {
+    display: none !important;
+  }
+}
+
+/* Badge-style footer links with mascot icon */
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(90deg, #1c4efd 0%, #0d93ff 100%);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(10, 28, 75, 0.35);
+}
+
+.footer-badges a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1.1rem 0.35rem 2.4rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: transform 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.footer-badges a::before {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  width: 1.55rem;
+  height: 1.55rem;
+  background: url("https://cdn.discordapp.com/attachments/1099030085882880111/1434704219205533757/LOULOUci.png?ex=6909f4ad&is=6908a32d&hm=0ed8fe70c5c13fcf6bbe7b7b91120685143233b387b2b1e142f3739c1bd88d92&")
+    center / contain no-repeat;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+}
+
+.footer-badges a:hover {
+  transform: translateY(-3px);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.footer-badges a:active {
+  transform: translateY(0);
+}
+
+/* Example usage helper (optional) */
+.example-page-doll {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
 }
 </style>
+
+<!-- Example HTML placement -->
+<div class="profile-page-background">
+  <div class="example-page-doll">
+    <div class="footer-badges">
+      <a href="#content">Content &amp; Private Policy</a>
+      <a href="#terms">Term of Use</a>
+      <a href="#faq">FAQ</a>
+      <a href="#guidelines">Community Guidelines</a>
+      <a href="#twitter">Twitter</a>
+    </div>
+  </div>
+
+  <div class="page-doll">
+    <a class="page-doll__item" href="#profile-doll" title="Loulou mascot">
+      <img
+        src="https://cdn.discordapp.com/attachments/1099030085882880111/1434704219205533757/LOULOUci.png?ex=6909f4ad&is=6908a32d&hm=0ed8fe70c5c13fcf6bbe7b7b91120685143233b387b2b1e142f3739c1bd88d92&"
+        alt="Page Doll"
+      />
+    </a>
+  </div>
+</div>
