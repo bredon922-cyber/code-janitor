@@ -1,22 +1,4 @@
 <style>
-:root {
-  --ink-light: #F2F1DF;
-  --ink-dark: #484742;
-  --bg-mid: #990a16;
-  --acc-1: #c8bcbf;
-  --acc-2: #397330;
-  --acc-3: #89A65D;
-  --acc-4: #40000a;
-  --bg-deep: #342323;
-  --page-font: 'Cormorant Garamond', serif;
-}
-
-body {
-  background-color: var(--bg-deep);
-  color: var(--ink-light);
-  font-family: var(--page-font);
-}
-
 .page-doll-area {
   position: fixed;
   bottom: 60px;
@@ -36,9 +18,6 @@ body {
   width: 70px;
   height: auto;
   cursor: pointer;
-  border: 2px solid var(--bg-mid);
-  border-radius: 8px;
-  background-color: color-mix(in srgb, var(--acc-4) 50%, transparent);
 }
 
 .page-doll.mobile-only {
@@ -54,86 +33,75 @@ body {
     display: none;
   }
 }
-
-/* page elements */
-* {
-  font-family: var(--page-font);
-  color: var(--ink-light);
-}
-
-a:link,
-a:visited {
-  color: var(--acc-3);
-}
-
-a:hover,
-a:active {
-  color: var(--acc-2);
-}
-
-.css-0 {
-  background: none !important;
-}
-
-.css-UNIQUEID {
-  font-family: var(--page-font);
-  color: var(--ink-light);
-  font-size: 20px;
-  text-shadow: 2px 2px var(--acc-4);
-  -webkit-text-stroke: 1px var(--bg-mid);
-}
-
-.Btn2-purple:before {
-  transition: none;
-  background: var(--bg-mid);
-}
-
-.Btn2-purple {
-  background: var(--bg-mid);
-  border-color: var(--bg-mid);
-  color: var(--ink-light);
-}
-
-.css-9lg76n {
-  font-family: var(--page-font);
-  color: var(--ink-light);
-}
-
-.css-1w58nos {
-  box-shadow: none !important;
-  border: 1px solid var(--bg-mid) !important;
-  border-radius: 10px;
-  background-color: var(--acc-1);
-  font-family: var(--page-font);
-  font-size: 14px;
-  color: var(--ink-dark);
-}
-
-.css-oqdsp6 {
-  box-shadow: none !important;
-  border: 1px solid var(--acc-4) !important;
-  border-radius: 10px;
-  background-color: var(--acc-4);
-  font-family: var(--page-font);
-  font-size: 14px;
-  color: var(--ink-light);
-}
-
-.css-1n2in4t,
-.css-8l42c1 {
-  background: var(--acc-1);
-  border: 1px solid var(--bg-mid);
-  border-radius: 6px;
-}
-
-.css-1n2in4t svg,
-.css-8l42c1 svg {
-  fill: var(--acc-2);
-}
 </style>
 
 <div class="page-doll-area">
   <div class="page-doll">
-    <img src="https://cdn.discordapp.com/attachments/1099030085882880111/1434701738429911160/25_09_08__BUBBLE__NAOMY__NOFOND.png?ex=6909f25d&amp;is=6908a0dd&amp;hm=72a2835b2f737911ac72af8b0f5da230b5090208464a52be0f707766eec1703c&amp;" alt="Page Doll Loulou" />
+    <img src="https://cdn.discordapp.com/attachments/1099030085882880111/1434701738429911160/25_09_08__BUBBLE__NAOMY__NOFOND.png?ex=6909f25d&amp;is=6908a0dd&amp;hm=72a2835b2f737911ac72af8b0f5da230b5090208464a52be0f707766eec1703c&amp;" alt="Page Doll Loulou">
   </div>
 </div>
+
+
+<style>
+/* page elements */
+* {
+    font-family: FONT;
+    color: #F2F1DF;
+}
+a:link, a:visited {
+    color: #89A65D;
+}
+a:hover, a:active {
+    color: #397330;
+}
+.css-0 {
+    background: none !important; 
+}
+.css-UNIQUEID {
+    font-family: FONT;
+    color: #F2F1DF;
+    font-size: VALUEpx;
+    text-shadow: VALUEpx VALUEpx #40000a;
+    -webkit-text-stroke: VALUEpx #484742;
+}
+.Btn2-purple:before {
+    transition: none;
+    background: #990a16;
+}
+.Btn2-purple {
+    background: #40000a;
+}
+.css-9lg76n {
+    font-family: FONT;
+    color: #F2F1DF;
+}
+</style>
+
+<style>
+.css-1w58nos {
+    box-shadow: none !important;
+    border: VALUEpx STYLE #990a16 !important;
+    border-radius: VALUEpx;
+    background-color: #c8bcbf;
+    font-family: FONT; 
+    font-size: VALUEpx;
+    color: #342323;
+}
+.css-oqdsp6 {
+    box-shadow: none !important;
+    border: VALUEpx STYLE #40000a !important;
+    border-radius: VALUEpx;
+    background-color: #40000a;
+    font-family: FONT; 
+    font-size: VALUEpx;
+    color: #F2F1DF;
+}
+.css-1n2in4t, .css-8l42c1 {
+    background: #990a16;
+    border: VALUEpx STYLE #40000a;
+    border-radius: VALUEpx;
+}
+.css-1n2in4t svg, .css-8l42c1 svg {
+    fill: #F2F1DF;
+}
+</style>
