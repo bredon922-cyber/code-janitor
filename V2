@@ -47,12 +47,20 @@
 :root {
     --font-display: "Grand Caslon", "Times New Roman", serif;
     --font-body: "Candara", "Segoe UI", sans-serif;
+    --ink: #F2F1DF;
+    --ink-dark: #484742;
+    --bg-mid: #990a16;
+    --acc-1: #c8bcbf;
+    --acc-2: #397330;
+    --acc-3: #89A65D;
+    --acc-4: #40000a;
+    --bg-deep: #342323;
 }
 html, body {
     background-color: #331419;
 }
 * {
-    color: #F2F1DF;
+    color: var(--ink);
     font-family: var(--font-body);
 }
 body, button, input, select, textarea {
@@ -68,23 +76,23 @@ h1, h2, h3, h4, h5, h6,
     font-family: var(--font-display);
 }
 a:link, a:visited {
-    color: #89A65D;
+    color: var(--acc-3);
 }
 a:hover, a:active {
-    color: #397330;
+    color: var(--acc-2);
 }
 .css-0 {
     background: none !important; 
 }
 .Btn2-purple:before {
     transition: none;
-    background: #990a16;
+    background: var(--bg-mid);
 }
 .Btn2-purple {
-    background: #40000a;
+    background: var(--acc-4);
 }
 .css-9lg76n {
-    color: #F2F1DF;
+    color: var(--ink);
 }
 </style>
 
@@ -101,53 +109,53 @@ a:hover, a:active {
     height: 250px;
     width: 250px;
     border-radius: 10pc;
-    border: VALUEpx solid #990a16;
+    border: VALUEpx solid var(--bg-mid);
     box-shadow: none !important;
 }
 
 .css-1w58nos {
     box-shadow: none !important;
-    border: VALUEpx STYLE #990a16 !important;
+    border: VALUEpx STYLE var(--bg-mid) !important;
     border-radius: VALUEpx;
-    background-color: #c8bcbf;
+    background-color: var(--acc-1);
     font-family: var(--font-body);
     font-size: VALUEpx;
-    color: #342323;
+    color: var(--bg-deep);
 }
 .css-oqdsp6 {
     box-shadow: none !important;
-    border: VALUEpx STYLE #40000a !important;
+    border: VALUEpx STYLE var(--acc-4) !important;
     border-radius: VALUEpx;
-    background-color: #40000a;
+    background-color: var(--acc-4);
     font-family: var(--font-body);
     font-size: VALUEpx;
-    color: #F2F1DF;
+    color: var(--ink);
 }
 .css-1n2in4t, .css-8l42c1 {
-    background: #990a16;
-    border: VALUEpx STYLE #40000a;
+    background: var(--bg-mid);
+    border: VALUEpx STYLE var(--acc-4);
     border-radius: VALUEpx;
 }
 .css-1n2in4t svg, .css-8l42c1 svg {
-    fill: #F2F1DF;
+    fill: var(--ink);
 }
 
 /* username (replace .css-USERNAME-ID with the inspected class) */
 .css-USERNAME-ID {
     font-family: var(--font-display);
     font-size: VALUEpx;
-    color: #F2F1DF;
-    text-shadow: VALUEpx VALUEpx #40000a;
-    -webkit-text-stroke: VALUEpx #484742;
+    color: var(--ink);
+    text-shadow: VALUEpx VALUEpx var(--acc-4);
+    -webkit-text-stroke: VALUEpx var(--ink-dark);
 }
 
 /* follower count tag */
 .css-FOLLOWER-TAG-ID {
     font-family: var(--font-body);
     font-size: VALUEpx;
-    color: #342323;
-    background: #c8bcbf;
-    border: VALUEpx solid #990a16;
+    color: var(--bg-deep);
+    background: var(--acc-1);
+    border: VALUEpx solid var(--bg-mid);
 }
 
 /* event badges */
@@ -159,12 +167,12 @@ a:hover, a:active {
 
 /* follow button */
 .Btn:before {
-    color: #F2F1DF;
-    background-color: #990a16;
+    color: var(--ink);
+    background-color: var(--bg-mid);
     font-family: var(--font-body);
 }
 .Btn {
-    background: #40000a;
+    background: var(--acc-4);
 }
 
 /* center follow button */
@@ -174,12 +182,93 @@ a:hover, a:active {
 
 /* card border & public characters */
 .css-PUBLIC-CHAR-ID {
-    border: VALUEpx solid #990a16;
+    border: VALUEpx solid var(--bg-mid);
     border-radius: VALUEpx;
 }
 
 /* remove default gradient */
 .css-REMOVE-GRADIENT-ID {
   background: none;
+}
+</style>
+
+<style>
+/* ===== Barre d’en-tête ===== */
+.pp-top-bar,
+.profile-top-bar {
+  background: var(--acc-4) !important;
+  color: var(--ink) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* ===== Recherche ===== */
+.profile-top-bar-search-box {
+  max-width: 640px !important;
+}
+.profile-top-bar-search-box input::placeholder {
+  color: var(--ink) !important;
+  opacity: .85 !important;
+}
+
+/* ===== Boutons Auth ===== */
+.pp-top-bar-auth-buttons,
+.profile-top-bar-auth-buttons {
+  display: flex;
+  gap: .5rem;
+}
+
+.pp-top-bar-auth-buttons-login,
+.profile-top-bar-auth-buttons-login {
+  background: var(--acc-2) !important;
+  color: var(--bg-deep) !important;
+  border: 1px solid color-mix(in oklab, var(--acc-2) 80%, black) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+}
+.pp-top-bar-auth-buttons-login:hover,
+.profile-top-bar-auth-buttons-login:hover {
+  filter: saturate(1.1) brightness(1.05);
+}
+
+.pp-top-bar-auth-buttons-register,
+.profile-top-bar-auth-buttons-register {
+  background: color-mix(in oklab, var(--bg-mid) 85%, var(--acc-4)) !important;
+  color: var(--ink) !important;
+  border: 1px solid color-mix(in oklab, var(--bg-mid) 65%, black) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+}
+.pp-top-bar-auth-buttons-register:hover,
+.profile-top-bar-auth-buttons-register:hover {
+  filter: saturate(1.08) brightness(1.04);
+}
+
+/* ===== Mobile ===== */
+.pp-top-bar-title,
+.profile-top-bar-title {
+  color: var(--ink) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 10px color-mix(in oklab, var(--ink) 16%, transparent);
+}
+
+.pp-top-bar-back-button,
+.profile-top-bar-back-button {
+  background: var(--ink) !important;
+  color: var(--acc-4) !important;
+  border: 1px solid rgba(255, 255, 255, .14) !important;
+  border-radius: 10px !important;
+}
+
+/* ===== Créer un personnage ===== */
+.pp-top-bar-right a[href*="create"],
+.profile-top-bar-right a[href*="create"] {
+  background: var(--ink) !important;
+  color: var(--acc-4) !important;
+  opacity: .92 !important;
+  padding: .45rem .95rem !important;
+  border-radius: 10px !important;
+  font-weight: 1000 !important;
+  text-decoration: none !important;
 }
 </style>
