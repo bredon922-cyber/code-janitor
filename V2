@@ -44,6 +44,9 @@
 
 <style>
 /* page elements */
+html, body {
+    background-color: #331419;
+}
 * {
     font-family: FONT;
     color: #F2F1DF;
