@@ -1,5 +1,10 @@
 <style>
 .profile-page-background {
-  
+
+}
+
+.chakra-image.css-0 {
+  content: url("https://cdn.discordapp.com/attachments/1099030085882880111/1434704219205533757/LOULOUci.png?ex=6909f4ad&is=6908a32d&hm=0ed8fe70c5c13fcf6bbe7b7b91120685143233b387b2b1e142f3739c1bd88d92&");
+  /* .css-0 affectera probablement l'arrière-plan sur mobile */
 }
 </style>
