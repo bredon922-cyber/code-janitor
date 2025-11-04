@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Démo Loulou</title>
+  <link rel="stylesheet" href="styles/loulou.css" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #222 0%, #111 55%, #050505 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f2f2f2;
+    }
+    .profile-character-card {
+      position: relative;
+      width: min(320px, 90vw);
+      padding: 2.5rem 1rem 1rem;
+      background: rgba(30, 30, 40, 0.75);
+      border-radius: 1.25rem;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    }
+    .profile-character-card h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .profile-character-card-star-line {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-character-card-star {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      background: gold;
+      border-radius: 50%;
+    }
+    .controls {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    label {
+      font-weight: 600;
+    }
+    input[type="range"] {
+      width: 100%;
+    }
+    .value {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-character-card">
+    <div class="profile-character-card-star-line">
+      <div class="profile-character-card-star" aria-hidden="true"></div>
+    </div>
+    <h1>Loulou sur la carte</h1>
+    <div class="controls">
+      <label>
+        Taille
+        <input type="range" id="size" min="32" max="240" value="96" />
+        <div class="value" data-for="size">96px</div>
+      </label>
+      <label>
+        Décalage horizontal
+        <input type="range" id="dx" min="-120" max="120" value="0" />
+        <div class="value" data-for="dx">0px</div>
+      </label>
+      <label>
+        Décalage vertical
+        <input type="range" id="dy" min="-120" max="120" value="0" />
+        <div class="value" data-for="dy">0px</div>
+      </label>
+    </div>
+  </div>
+  <script>
+    const rootStyle = document.documentElement.style;
+    const inputs = document.querySelectorAll('input[type="range"]');
+    const values = Object.fromEntries(
+      Array.from(document.querySelectorAll('.value')).map((el) => [
+        el.dataset.for,
+        el,
+      ]),
+    );
+
+    const format = (id, val) => `${val}${id === 'size' ? 'px' : 'px'}`;
+
+    inputs.forEach((input) => {
+      const applyValue = (value) => {
+        const cssVar =
+          input.id === 'size'
+            ? '--loulou-size'
+            : input.id === 'dx'
+            ? '--loulou-dx'
+            : '--loulou-dy';
+        rootStyle.setProperty(cssVar, `${value}px`);
+        values[input.id].textContent = format(input.id, value);
+      };
+
+      applyValue(input.value);
+      input.addEventListener('input', (event) => applyValue(event.target.value));
+    });
+  </script>
+</body>
+</html>
