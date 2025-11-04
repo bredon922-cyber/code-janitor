@@ -1,0 +1,85 @@
+/* Variables de contrôle pour Loulou */
+:root {
+  --loulou-size: 96px; /* Taille par défaut */
+  --loulou-dx: 0px;    /* Décalage horizontal (droite + / gauche -) */
+  --loulou-dy: 0px;    /* Décalage vertical (bas + / haut -) */
+  --loulou-image: url("https://raw.githubusercontent.com/bredon922-cyber/image-janitor/main/LOULOU%C3%A7i.png");
+}
+
+/* On garde les éléments du profil sans découpe */
+.profile-character-card,
+.profile-character-card * {
+  overflow: visible !important;
+}
+
+/* Zone étoile : on force un nouveau contexte pour un z-index fiable */
+.pp-cc-star-line,
+.profile-character-card-star-line,
+[class*="star-line"] {
+  position: relative !important;
+  isolation: isolate !important;
+  z-index: 10 !important;
+}
+
+/* On rend l'étoile d'origine invisible mais présente pour conserver la mise en page */
+.pp-cc-star,
+.profile-character-card-star,
+[class*="star-line"] > [class*="star"],
+[class*="star"] {
+  opacity: 0 !important;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+/* On affiche Loulou au-dessus de tout le reste */
+.pp-cc-star-line::after,
+.profile-character-card-star-line::after,
+[class*="star-line"]::after {
+  content: "";
+  position: absolute;
+  left: calc(50% + var(--loulou-dx));
+  top: calc(50% + var(--loulou-dy));
+  transform: translate(-50%, -50%);
+  width: var(--loulou-size);
+  height: var(--loulou-size);
+  background-image: var(--loulou-image);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 2147483647 !important;
+}
+
+/* Fallback supplémentaire si des classes changent après publication */
+@media (max-width: 99999px) {
+  [class*="profile" i][class*="card" i] [class*="star-line" i] {
+    position: relative !important;
+    isolation: isolate !important;
+  }
+
+  [class*="profile" i][class*="card" i] [class*="star-line" i]::after {
+    content: "";
+    position: absolute;
+    left: calc(50% + var(--loulou-dx));
+    top: calc(50% + var(--loulou-dy));
+    transform: translate(-50%, -50%);
+    width: var(--loulou-size);
+    height: var(--loulou-size);
+    background-image: var(--loulou-image);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    z-index: 2147483647 !important;
+  }
+}
+
+/* Sauvegarde si l'étoile est remplacée par un background */
+.pp-cc-star-line,
+.profile-character-card-star-line,
+[class*="star-line"] {
+  background-image: var(--loulou-image) !important;
+  background-repeat: no-repeat !important;
+  background-size: var(--loulou-size) var(--loulou-size) !important;
+  background-position: calc(50% + var(--loulou-dx)) calc(50% + var(--loulou-dy)) !important;
+}
