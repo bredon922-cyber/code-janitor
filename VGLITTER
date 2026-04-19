@@ -1,1 +1,266 @@
+<body style="background-color: var(--colour-grey-550);">
+  <!-- Racine de l'application -->
+  <div id="root">
+    <main class="profile-page">
+      <!-- En-tête principal -->
+      <header class="top-header">
+        <button class="back-button" type="button">Dos</button>
+        <h1 class="profile-title">concierge</h1>
+        <button class="menu-button" type="button" aria-label="Options">⋮</button>
+      </header>
 
+      <!-- Informations utilisateur -->
+      <section class="profile-hero">
+        <img
+          class="profile-avatar"
+          src="https://ella.janitorai.com/avatars/kd7mJSZSErIj8vh1sLsyz.webp?width=600"
+          alt="Avatar de Coir"
+        />
+
+        <div class="profile-meta">
+          <h2>@Coir</h2>
+          <p><strong>25353</strong> abonnés</p>
+          <p>Membre depuis le 23 janvier 2024</p>
+        </div>
+      </section>
+
+      <!-- Bloc d'accueil personnalisé -->
+      <section class="coir-home">
+        <a href="https://janitorai.com/?segment=favorites&view=all&page=1" class="coir-exit">Maison</a>
+
+        <!-- Fond principal -->
+        <div class="coir-bg">
+          <img
+            class="coir-bg-img"
+            src="https://ella.janitorai.com/media-approved/h1pY7bnlAX3-aLrq73bZ-.webp"
+            alt="Fond du profil"
+          />
+        </div>
+
+        <!-- Carte de bienvenue -->
+        <article class="coir-welcome">
+          <h3>Content de te revoir</h3>
+          <p class="welcome-name">fibre de coco</p>
+          <p class="fake-input">CarLover@gmail.com</p>
+          <p class="fake-input">••••••••</p>
+          <a href="https://ko-fi.com/coirr" target="_blank" rel="noopener noreferrer" class="enter-btn">Entrer</a>
+        </article>
+
+        <!-- Statut -->
+        <article class="coir-status">
+          <h3>Statut</h3>
+          <p>Légère pause.</p>
+        </article>
+
+        <!-- Widget musique -->
+        <article class="spotify-widget">
+          <div class="spotify-header">
+            <img
+              class="album-cover"
+              src="https://ella.janitorai.com/media-approved/NAh0bPp4LwrYUUjkUalMT.webp"
+              alt="Pochette de l'album"
+            />
+            <div>
+              <p class="track-title">Ghost</p>
+              <p class="track-artist">EsDeeKid</p>
+            </div>
+          </div>
+
+          <!-- Paroles (version courte) -->
+          <ul class="lyrics">
+            <li>Disparu comme un fantôme</li>
+            <li>Mon téléphone fait des siennes</li>
+            <li>Emo boy, j'ai mis l'ambiance</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <style>
+    /* =========================
+       Variables et styles globaux
+       ========================= */
+    :root {
+      --bg: #121212;
+      --text: #ffffff;
+      --accent: #52762e;
+      --panel: rgba(46, 46, 46, 0.65);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Poppins, Arial, sans-serif;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* =========================
+       Header
+       ========================= */
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .back-button,
+    .menu-button,
+    .enter-btn {
+      border: 0;
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--text);
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       Profil
+       ========================= */
+    .profile-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .profile-hero {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .profile-avatar {
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .profile-meta h2,
+    .profile-meta p {
+      margin: 4px 0;
+    }
+
+    /* =========================
+       Section custom Coir
+       ========================= */
+    .coir-home {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      min-height: 580px;
+      background: #1b1b1b;
+      padding: 20px;
+    }
+
+    .coir-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .coir-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(4px) brightness(0.45);
+    }
+
+    .coir-welcome,
+    .coir-status,
+    .spotify-widget,
+    .coir-exit {
+      position: relative;
+      z-index: 1;
+    }
+
+    .coir-welcome,
+    .coir-status,
+    .spotify-widget {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 14px;
+      max-width: 420px;
+    }
+
+    .fake-input {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 8px 10px;
+      border-radius: 999px;
+      margin: 8px 0;
+    }
+
+    .spotify-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .album-cover {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .track-title {
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .track-artist {
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    .lyrics {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      opacity: 0.9;
+    }
+
+    .coir-exit {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .coir-exit::before {
+      content: '← ';
+    }
+
+    /* =========================
+       Responsive
+       ========================= */
+    @media (max-width: 768px) {
+      .profile-hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .coir-home {
+        min-height: auto;
+      }
+    }
+  </style>
+</body>
